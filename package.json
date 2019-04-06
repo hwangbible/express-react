@@ -1,13 +1,15 @@
 {
-  "name": "exampleapp",
+  "name": "express-react",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
     "build": "cd client && npm run build",
-    "dev": "nodemon server.js",
+    "install:client": "cd client && npm install",
+    "dev:client": "cd client && npm start",
+    "dev:server": "nodemon server.js",
     "start": "node server.js",
-    "test": "\"echo \\\"Error: no test specified\\\" && exit 1\""
+    "test": "cd client && npm test"
   },
   "author": "Sung Hwang",
   "license": "ISC",
