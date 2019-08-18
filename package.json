@@ -5,19 +5,35 @@
   "main": "server.js",
   "scripts": {
     "build": "cd client && npm run build",
-    "install:client": "cd client && npm install",
+    "dev": "concurrently 'npm run dev:client' 'npm run dev:server'",
     "dev:client": "cd client && npm start",
     "dev:server": "nodemon server.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "start": "node server.js",
     "test": "cd client && npm test"
   },
   "author": "Sung Hwang",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.4"
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
   },
   "devDependencies": {
-    "nodemon": "^1.18.10"
-  }
+    "concurrently": "^4.1.1",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-flowtype": "^4.2.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "nodemon": "^1.19.1"
+  },
+  "eslintConfig": {
+    "extends": "airbnb"
+  },
+  "eslintIgnore": [
+    "**/node_modules/*"
+  ]
 }
